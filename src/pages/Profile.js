@@ -1,16 +1,59 @@
 import React from 'react'
 import {auth} from '../firebase.config'
-import { useState, useEffect } from 'react'
+
+import { useState } from 'react'
+import {AiOutlineMail, AiOutlineLogout} from 'react-icons/ai'
+import {BsFillPersonFill} from 'react-icons/bs'
+import { useNavigate } from 'react-router-dom'
 
 const Profile = () => {
 
-  const [user, setUser] = useState(null)
 
-  useEffect(() => {
-    setUser(auth.currentUser)
-  }, [])
+  const [formData, setformData] = useState({
+    name: auth.currentUser.displayName,
+    email: auth.currentUser.email
+  })
 
-  return user ? <h1>{user.displayName}</h1> : 'Not logged in'
+  const {name, email} = formData
+
+  const navigate = useNavigate()
+
+  const onLogout = function(e) {
+    e.preventDefault()
+    auth.signOut()
+    navigate('/sign-in')
+  }
+
+  return (
+    <div>
+      <header>
+        <h1 style={{color: '#FF6D60'}}>My Profile</h1>
+      </header>
+
+      <div className='profileInfoDiv'>
+        <div className='profileName'>
+          <BsFillPersonFill fill='#FF6D60' className='profilePageIcon'/>
+          <p>{name}</p>
+        </div>
+
+        <div className='profileEmail'>
+          <AiOutlineMail fill='#FF6D60' className='profilePageIcon'/>
+          <p>{email}</p>
+        </div>
+
+        <div className='profileLogout'>
+          <p>Log out</p>
+          <AiOutlineLogout 
+            fill='#FF6D60' 
+            className='profilePageIcon'
+            cursor='pointer'
+            onClick={onLogout}
+          />
+        </div>
+      </div>
+
+    </div>
+  )
 }
 
 export default Profile

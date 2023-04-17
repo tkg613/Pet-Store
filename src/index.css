@@ -4,7 +4,7 @@
 
 body {
   font-family: 'Inconsolata', monospace;
-  background-color: #E4D0D0;
+  background-color: #F3E99F;
 }
 
 .navbar {
@@ -16,7 +16,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #D5B4B4;
+  background-color: #98D8AA;
 }
 
 .navbarNav {
@@ -55,7 +55,7 @@ body {
 
 .navbarIconName {
   margin-top: 0.25rem;
-  color: #867070;
+  color: #FF6D60;
 }
 
 .navbarIconNameActive {
@@ -107,7 +107,7 @@ body {
   vertical-align: middle;
   height: 36px;
   width: 36px;
-  fill: #A84448;
+  fill: #FF6D60;
   right: 2.5rem;
   position: relative;
   cursor: pointer;
@@ -117,7 +117,7 @@ body {
   vertical-align: middle;
   height: 36px;
   width: 36px;
-  fill: #A84448;
+  fill: #FF6D60;
   cursor: pointer;
 }
 
@@ -133,13 +133,13 @@ body {
 .signInHeader {
   margin-top: 3rem;
   margin-left: 3rem;
-  color: #A84448;
+  color: #FF6D60;
 }
 
 .signInButtonDiv {
   display: flex;
   font-size: 36px;
-  color: #A84448;
+  color: #FF6D60;
   padding: 3rem;
 }
 
@@ -154,12 +154,58 @@ body {
   vertical-align: middle;
   height: 36px;
   width: 36px;
-  fill: #A84448;
+  fill: #FF6D60;
   cursor: pointer;
 }
 
 .forgotPasswordLink {
   text-decoration: none;
-  color: #A84448;
+  color: #FF6D60;
   margin-left: 3rem;
+}
+
+.orSignUp {
+  display: flex;
+  text-decoration: none;
+  color: #FF6D60;
+  margin-top: 3rem;
+  justify-content: center;
+}
+
+/* Profile Page */
+
+.profileInfoDiv {
+  display: block;
+}
+
+.profileName {
+  display: flex;
+  margin: 0.5rem;
+  font-size: 24px;
+  align-items: center;
+  color: #FF6D60;
+}
+
+.profileEmail {
+  display: flex;
+  margin: 0.5rem;
+  font-size: 24px;
+  align-items: center;
+  color: #FF6D60;
+}
+
+.profileLogout {
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 3rem;
+  font-size: 24px;
+  align-items: center;
+  color: #FF6D60;
+}
+
+.profilePageIcon {
+  height: 36px;
+  width: 36px;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }

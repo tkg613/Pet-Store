@@ -19,11 +19,11 @@ const Navbar = () => {
       <nav className='navbarNav'>
         <ul className='navbarListItems'>
           <li className='navbarListItem' onClick={() => navigate('/')}>
-            <MdOutlineExplore fill={pathMatchRoute('/') ? '#A84448' : '#867070'} className='exploreIcon'/>
+            <MdOutlineExplore fill={pathMatchRoute('/') ? '#A84448' : '#FF6D60'} className='exploreIcon'/>
             <p className={pathMatchRoute('/') ? 'navbarIconNameActive' : 'navbarIconName'}>Explore</p>
           </li>
           <li className='navbarListItem' onClick={() => navigate('/profile')}>
-            <BsFillPersonFill fill={pathMatchRoute('/profile') ? '#A84448' : '#867070'} className='profileIcon'/>
+            <BsFillPersonFill fill={pathMatchRoute('/profile') ? '#A84448' : '#FF6D60'} className='profileIcon'/>
             <p className={pathMatchRoute('/profile') ? 'navbarIconNameActive' : 'navbarIconName'}>Profile</p>
           </li>
         </ul>

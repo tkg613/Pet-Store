@@ -93,6 +93,10 @@ const SignIn = () => {
           Forgot Password
         </Link>
 
+        <Link to='/sign-up' className='orSignUp'>
+          Or Sign Up
+        </Link>
+
       </form>
     </>
   )
