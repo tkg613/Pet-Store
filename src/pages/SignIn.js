@@ -33,6 +33,7 @@ const SignIn = () => {
     try{
       const userCredential = await signInWithEmailAndPassword(auth, email, password)
       if (userCredential.user){
+        toast.success('logged in')
         navigate('/')
       }
       

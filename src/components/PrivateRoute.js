@@ -4,13 +4,14 @@ import { useAuthStatus } from '../hooks/useAuthStatus'
 
 const PrivateRoute = () => {
 
-  const {loggedIn, loading} = useAuthStatus()
+  const {loggedIn} = useAuthStatus()
+  // console.log(loggedIn)
 
-  if (loading) {
-    <h3>Loading...</h3>
+  if (loggedIn){
+    return <Outlet />
+  } else {
+    <Navigate to='/sign-in' />
   }
-
-  return loggedIn ? <Outlet /> : <Navigate to='/sign-in' />
 }
 
 export default PrivateRoute

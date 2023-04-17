@@ -209,3 +209,68 @@ body {
   margin-left: 2rem;
   margin-right: 2rem;
 }
+
+/* Forgot Password */
+
+/* .passwordResetDiv {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  justify-content: center;
+}
+
+.passwordResetLink {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  justify-content: center;
+} */
+
+.passwordResetContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.passwordResetDiv {
+  text-align: center;
+}
+
+.passwordResetLink {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.passwordResetInput {
+  height: 36px;
+  width: 30%;
+  padding-right: 10px;
+}
+
+.passwordResetBtn {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  height: 36px;
+  width: 36px;
+}
+
+.passwordResetIcon {
+  height: 100%; 
+  width: auto;
+}
+
+.passwordResetInputGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
