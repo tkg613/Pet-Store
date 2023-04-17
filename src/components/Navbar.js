@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import {MdOutlineExplore} from 'react-icons/md'
-import {CgProfile} from 'react-icons/cg'
+import {BsFillPersonFill} from 'react-icons/bs'
 
 const Navbar = () => {
 
@@ -19,12 +19,12 @@ const Navbar = () => {
       <nav className='navbarNav'>
         <ul className='navbarListItems'>
           <li className='navbarListItem' onClick={() => navigate('/')}>
-            <MdOutlineExplore className='exploreIcon'/>
+            <MdOutlineExplore fill={pathMatchRoute('/') ? '#A84448' : '#867070'} className='exploreIcon'/>
             <p className={pathMatchRoute('/') ? 'navbarIconNameActive' : 'navbarIconName'}>Explore</p>
           </li>
-          <li className={pathMatchRoute('/profile') ? 'navbarIconNameActive' : 'navbarIconName'} onClick={() => navigate('/profile')}>
-            <CgProfile className='profileIcon'/>
-            <p className='navbarIconName'>Profile</p>
+          <li className='navbarListItem' onClick={() => navigate('/profile')}>
+            <BsFillPersonFill fill={pathMatchRoute('/profile') ? '#A84448' : '#867070'} className='profileIcon'/>
+            <p className={pathMatchRoute('/profile') ? 'navbarIconNameActive' : 'navbarIconName'}>Profile</p>
           </li>
         </ul>
       </nav>

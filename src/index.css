@@ -1,4 +1,12 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap');
+
+
+body {
+  font-family: 'Inconsolata', monospace;
+  background-color: #E4D0D0;
+}
+
 .navbar {
   position: fixed;
   left: 0;
@@ -8,7 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #E4D0D0;
+  background-color: #D5B4B4;
 }
 
 .navbarNav {
@@ -37,14 +45,12 @@
   height: 36px;
   width: 36px;
   margin-bottom: 0;
-  color: #867070;
 }
 
 .profileIcon {
   height: 36px;
   width: 36px;
   margin-bottom: 0;
-  color: #867070;
 }
 
 .navbarIconName {
@@ -54,5 +60,106 @@
 
 .navbarIconNameActive {
   margin-top: 0.25rem;
-  color: #000000;
+  color: #A84448;
+}
+
+.signInDiv {
+  padding: 2rem;
+  display: flex;
+}
+
+.nameInput {
+  /* display: flex; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 75%;
+}
+
+.emailInput {
+  /* display: flex; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 75%;
+}
+
+.passwordInput {
+  /* display: flex; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  width: 75%;
+}
+
+.signInInput {
+  margin-left: 1rem;
+  vertical-align: middle;
+  width: 75%;
+  border-radius: 5px;
+  border: none;
+  height: 36px;
+}
+
+.eyeIcon {
+  vertical-align: middle;
+  height: 36px;
+  width: 36px;
+  fill: #A84448;
+  right: 2.5rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.signInIcon {
+  vertical-align: middle;
+  height: 36px;
+  width: 36px;
+  fill: #A84448;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 550px){
+  .signInIcon{
+    fill: transparent;
+  }
+  .eyeIcon {
+    fill: transparent;
+  }
+}
+
+.signInHeader {
+  margin-top: 3rem;
+  margin-left: 3rem;
+  color: #A84448;
+}
+
+.signInButtonDiv {
+  display: flex;
+  font-size: 36px;
+  color: #A84448;
+  padding: 3rem;
+}
+
+.signInButton {
+  margin-left: 2rem;
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+
+.signInArrow {
+  vertical-align: middle;
+  height: 36px;
+  width: 36px;
+  fill: #A84448;
+  cursor: pointer;
+}
+
+.forgotPasswordLink {
+  text-decoration: none;
+  color: #A84448;
+  margin-left: 3rem;
 }
