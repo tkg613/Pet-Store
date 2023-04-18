@@ -299,3 +299,62 @@ body {
   text-decoration: none;
   color: #A84448;
 }
+
+/* Category Page */
+
+.categoryHeader {
+  text-transform: capitalize;
+  color: #A84448;
+  margin: 2rem;
+}
+
+.petInfoWrapper {
+  display: flex;
+}
+
+.petInfoImage {
+  height: 300px;
+  padding: 1rem;
+}
+
+.petInfoParagraph {
+  margin: 1rem;
+  color: #FF6D60;
+}
+
+.petInfoName {
+  font-size: 30px;
+  color: #A84448;
+}
+
+.petInfoGender {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.petInfoAge {
+  font-size: 20px;
+}
+
+.petInfoPrice {
+  font-size: 20px;
+}
+
+.petInfoLink {
+  margin-left: 1rem;
+}
+
+.petInfoLink button {
+  border: none;
+  background-color: #98D8AA;
+  border-radius: 7px;
+  color: #088395;
+  font-size: 24px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.petInfoLink button:hover {
+  background-color: #088395;
+  color: #98D8AA;
+}
