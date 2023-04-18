@@ -2,9 +2,10 @@ import React from 'react'
 import {auth} from '../firebase.config'
 
 import { useState } from 'react'
-import {AiOutlineMail, AiOutlineLogout} from 'react-icons/ai'
+import {AiOutlineMail, AiOutlineLogout, AiOutlinePlusCircle} from 'react-icons/ai'
 import {BsFillPersonFill} from 'react-icons/bs'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
+
 
 const Profile = () => {
 
@@ -26,7 +27,7 @@ const Profile = () => {
 
   return (
     <div>
-      <header>
+      <header className='profileHeader'>
         <h1 style={{color: '#FF6D60'}}>My Profile</h1>
       </header>
 
@@ -39,6 +40,13 @@ const Profile = () => {
         <div className='profileEmail'>
           <AiOutlineMail fill='#FF6D60' className='profilePageIcon'/>
           <p>{email}</p>
+        </div>
+
+        <div className='profileCreatePet'>
+          <Link to='/create-pet' className='createPetLink'>
+            <AiOutlinePlusCircle fill='#A84448' className='createPetIcon'/>
+            Post pet for sale
+          </Link>
         </div>
 
         <div className='profileLogout'>

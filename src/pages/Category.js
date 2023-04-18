@@ -56,6 +56,7 @@ const Category = () => {
     return <p>No pets found.</p> // show message if no pets are found
   }
 
+
   return (
     <>
       <header>
@@ -67,7 +68,7 @@ const Category = () => {
             <div className='petInfoWrapper' key={pet.id}>
               <div className='petInfoImage'>
                 <img 
-                  src={pet.data.imageUrls[0]} 
+                  src={pet.data.imgUrls[0]} 
                   alt='pet image'
                   height='300px'
                   width='300px'
