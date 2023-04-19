@@ -1,9 +1,9 @@
 import React from 'react'
 import {auth} from '../firebase.config'
-import {collection, getDocs, query, where, orderBy, doc, deleteDoc} from 'firebase/firestore'
+import {collection, getDocs, query, where, orderBy} from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { useState, useEffect } from 'react'
-import {AiOutlineMail, AiOutlineLogout, AiOutlinePlusCircle} from 'react-icons/ai'
+import {AiOutlineMail, AiOutlineLogout} from 'react-icons/ai'
 import {BsFillPersonFill} from 'react-icons/bs'
 import { useNavigate, Link } from 'react-router-dom'
 
@@ -55,43 +55,50 @@ const Profile = () => {
   return (
     <div>
       <header className='profileHeader'>
-        <h1 style={{color: '#FF6D60'}}>My Profile</h1>
+        <h1>My Profile</h1>
       </header>
 
       <div className='profileInfoDiv'>
         <div className='profileName'>
-          <BsFillPersonFill fill='#FF6D60' className='profilePageIcon'/>
+          <BsFillPersonFill className='profilePageIcon'/>
           <p>{name}</p>
         </div>
+        <hr/>
 
         <div className='profileEmail'>
-          <AiOutlineMail fill='#FF6D60' className='profilePageIcon'/>
+          <AiOutlineMail className='profilePageIcon'/>
           <p>{email}</p>
         </div>
+        <hr/>
 
         {!loading && pets?.length > 0 && (
-          <>
-            <p>Your pets for sale</p>
+          <div className='userPetSaleDiv'>
+            <p>Your pet(s) for sale:</p>
             <ul>
               {pets.map((pet, index) => (
-                <li key={index}>{pet.data.name}</li>
+                <div key={index} className='userPetSaleImgDiv'>
+                  <img 
+                    src={pet.data.imgUrls[0]} 
+                    alt='user pet image'  
+                  />
+                  <li>{pet.data.name}</li>
+                  <hr/>
+                </div>
               ))}
             </ul>
-          </>
+          </div>
         )}
 
         <div className='profileCreatePet'>
           <Link to='/create-pet' className='createPetLink'>
-            <AiOutlinePlusCircle fill='#A84448' className='createPetIcon'/>
             Post pet for sale
           </Link>
         </div>
 
         <div className='profileLogout'>
           <p>Log out</p>
-          <AiOutlineLogout 
-            fill='#FF6D60' 
-            className='profilePageIcon'
+          <AiOutlineLogout  
+            className='logoutIcon'
             cursor='pointer'
             onClick={onLogout}
           />

@@ -45,61 +45,72 @@ const Pet = () => {
 
   return (
     <>
-      <main style={{margin: '0'}}>
+      <main>
+        <div className='petInfoWrapper'>
+          <div className='swiperWrapper'>
+            <Swiper
+              slidesPerView={1}
+              pagination={{clickable: true}}
+              className='petSwiper'
+            >
+              {pet.imgUrls.map((url, index) => (
+                <SwiperSlide key={index}>
+                  <div 
+                    className='swiperSlideDiv'
+                    style={{
+                      background: `url(${pet.imgUrls[index]}) 
+                      center no-repeat`,
+                      backgroundSize: 'cover',
+                      minHeight: '50rem'
+                    }}  
+                  >
 
-        <Swiper
-          slidesPerView={1}
-          pagination={{clickable: true}}
-        >
-          {pet.imgUrls.map((url, index) => (
-            <SwiperSlide key={index}>
-              <div 
-                className='swiperSlideDiv'
-                style={{
-                  background: `url(${pet.imgUrls[index]}) 
-                  center no-repeat`,
-                  backgroundSize: 'cover',
-                  minHeight: '50rem'
-                }}  
-              >
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+            
+          <div className='petDetailsWrapper'>
+            <header className='petHeader'>
+              <h1>{pet.name}</h1>
+            </header>
+            
+            <div className='petDetails'>
+              <p>Type: {pet.type}</p>
+              <hr/>
+              <p>{pet.gender}</p>
+              <hr/>
+              <p>Age: {pet.age}</p>
+              <hr/>
+              <p>Price: ${pet.price}</p>
+              <hr/>
+            </div>
 
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+            <div className='contactOwnerDiv'>
+              {auth.currentUser?.uid !== pet.userRef && (
+                <Link to={`/contact/${pet.userRef}?petName=${pet.name}`} className='contactLink'>
+                  Contact owner
+                </Link>
+              )}
+            </div>
 
+            <div className='shareIconDiv' onClick={() => {
+              navigator.clipboard.writeText(window.location.href)
+              setShareLinkCopied(true)
+              setTimeout(() => {
+                setShareLinkCopied(false)
+              }, 2000)}}
+            >
+              <p>Copy link to clipboard</p>
+              <AiFillCopy className='shareIcon'/>
+            </div>
+            {shareLinkCopied && <p className='linkCopiedText'>Link copied to clipboard.</p>}
 
-        <header className='petHeader'>
-          <h1>{pet.name}</h1>
-        </header>
-        
-        <div className='petDetails'>
-          <p>Type: {pet.type}</p>
-          <p>{pet.gender}</p>
-          <p>Age: {pet.age}</p>
-          <p>Price: ${pet.price}</p>
+          </div>
+
         </div>
 
-        <div>
-          {auth.currentUser?.uid !== pet.userRef && (
-            <Link to={`/contact/${pet.userRef}?petName=${pet.name}`} className='contactLink'>
-              Contact owner
-            </Link>
-          )}
-        </div>
-
-
-        <div className='shareIconDiv' onClick={() => {
-          navigator.clipboard.writeText(window.location.href)
-          setShareLinkCopied(true)
-          setTimeout(() => {
-            setShareLinkCopied(false)
-          }, 2000)
-        }}>
-          <AiFillCopy fill='#A84448' className='shareIcon'/>
-        </div>
-        {shareLinkCopied && <p className='linkCopiedText'>Link copied to clipboard.</p>}
-        
       </main>
     </>
   )

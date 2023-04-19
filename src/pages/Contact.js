@@ -37,23 +37,23 @@ const Contact = () => {
 
   return (
     <div>
-      <header>
+      <header className='contactHeader'>
         <h1>Contact Owner</h1>
       </header>
 
       {owner !== null && (
         <main>
-          <div>
+          <div className='contactOwnerName'>
             <p>Contact {owner?.name}</p>
           </div>
           <form>
-            <div>
-              <label htmlFor='message'>Message</label>
+            <div className='contactMessage'>
+              <label htmlFor='message'>Message:</label>
               <textarea name='message' id='message' value={message} onChange={onChange}></textarea>
             </div>
 
             <a href={`mailto: ${owner.email}?Subject=${searchParams.get('petName')}&body=${message}`}>
-              <button type='button'>
+              <button type='button' className='contactOwnerBtn'>
                 Send Message
               </button>
             </a>

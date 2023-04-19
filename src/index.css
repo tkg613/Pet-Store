@@ -4,7 +4,7 @@
 
 body {
   font-family: 'Inconsolata', monospace;
-  background-color: #F3E99F;
+  background-color: #ECF9FF;
 }
 
 .navbar {
@@ -16,7 +16,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #98D8AA;
+  background-color: #BDCDD6;
 }
 
 .navbarNav {
@@ -55,12 +55,12 @@ body {
 
 .navbarIconName {
   margin-top: 0.25rem;
-  color: #FF6D60;
+  color: #20262E;
 }
 
 .navbarIconNameActive {
   margin-top: 0.25rem;
-  color: #A84448;
+  color: #0EA293;
 }
 
 .signInDiv {
@@ -107,7 +107,7 @@ body {
   vertical-align: middle;
   height: 36px;
   width: 36px;
-  fill: #FF6D60;
+  fill: #20262E;
   right: 2.5rem;
   position: relative;
   cursor: pointer;
@@ -117,7 +117,7 @@ body {
   vertical-align: middle;
   height: 36px;
   width: 36px;
-  fill: #FF6D60;
+  fill: #20262E;
   cursor: pointer;
 }
 
@@ -133,13 +133,13 @@ body {
 .signInHeader {
   margin-top: 3rem;
   margin-left: 3rem;
-  color: #FF6D60;
+  color: #20262E;
 }
 
 .signInButtonDiv {
   display: flex;
   font-size: 36px;
-  color: #FF6D60;
+  color: #20262E;
   padding: 3rem;
 }
 
@@ -154,20 +154,20 @@ body {
   vertical-align: middle;
   height: 36px;
   width: 36px;
-  fill: #FF6D60;
+  fill: #20262E;
   cursor: pointer;
 }
 
 .forgotPasswordLink {
   text-decoration: none;
-  color: #FF6D60;
+  color: #20262E;
   margin-left: 3rem;
 }
 
 .orSignUp {
   display: flex;
   text-decoration: none;
-  color: #FF6D60;
+  color: #20262E;
   margin-top: 3rem;
   justify-content: center;
 }
@@ -182,12 +182,17 @@ body {
   display: block;
 }
 
+.profileInfoDiv hr {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .profileName {
   display: flex;
   margin: 0.5rem;
   font-size: 24px;
   align-items: center;
-  color: #FF6D60;
+  color: #20262E;
 }
 
 .profileEmail {
@@ -195,7 +200,33 @@ body {
   margin: 0.5rem;
   font-size: 24px;
   align-items: center;
-  color: #FF6D60;
+  color: #20262E;
+}
+
+.userPetSaleDiv {
+  margin-left: 2rem;
+}
+
+.userPetSaleDiv p {
+  font-size: 20px;
+  margin-top: 3rem;
+}
+
+.userPetSaleImgDiv {
+  display: flex;
+  align-items: center;
+}
+
+.userPetSaleImgDiv img {
+  height: 100px;
+  width: 100px;
+  border: none;
+  border-radius: 7px;
+}
+
+.userPetSaleImgDiv li {
+  margin-left: 1rem;
+  list-style: none;
 }
 
 .profileCreatePet{
@@ -208,22 +239,26 @@ body {
 
 .createPetLink {
   text-decoration: none;
-  color: #A84448;
+  background-color: #27E1C1;
+  border: none;
+  border-radius: 7px;
+  padding: 5px;
+  color: white;
 }
 
 .createPetLink:hover {
-  color: #FF6D60;
+  background-color: #0EA293;
 }
 
 .createPetIcon {
   align-items: center;
   margin-right: 1rem;
+  fill: #20262E;
 }
 
 .createPetIcon:hover {
   fill: #FF6D60;
 }
-
 
 .profileLogout {
   display: flex;
@@ -231,7 +266,16 @@ body {
   margin-left: 3rem;
   font-size: 24px;
   align-items: center;
-  color: #FF6D60;
+  color: #20262E;
+}
+
+.logoutIcon {
+  fill: #27E1C1;
+  margin-left: 1rem;
+}
+
+.logoutIcon:hover {
+  fill: #0EA293;
 }
 
 .profilePageIcon {
@@ -239,6 +283,7 @@ body {
   width: 36px;
   margin-left: 2rem;
   margin-right: 2rem;
+  fill: #20262E;
 }
 
 /* Forgot Password */
@@ -291,7 +336,7 @@ body {
 
 .exploreHeader {
   margin: 2rem 2rem 3rem 2rem;
-  color: #A84448;
+  color: #20262E;
 }
 
 .categoryWrapper {
@@ -328,14 +373,14 @@ body {
 
 .categoryLink {
   text-decoration: none;
-  color: #A84448;
+  color: #20262E;
 }
 
 /* Category Page */
 
 .categoryHeader {
   text-transform: capitalize;
-  color: #A84448;
+  color: #20262E;
   margin: 2rem;
 }
 
@@ -350,12 +395,12 @@ body {
 
 .petInfoParagraph {
   margin: 1rem;
-  color: #FF6D60;
+  color: #20262E;
 }
 
 .petInfoName {
   font-size: 30px;
-  color: #A84448;
+  color: #20262E;
 }
 
 .petInfoGender {
@@ -435,22 +480,102 @@ body {
   margin: 2rem;
 }
 
+.petInfoWrapper {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-template-rows: 100%;
+  justify-content: center;
+}
+
+.petDetailsWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.petHeader {
+  margin-left: 4rem;
+  font-size: 36px;
+}
+
 .petDetails {
-  margin: 2rem;
+  margin-left: 5rem;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.contactOwnerDiv {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+}
+
+.contactLink {
+  text-decoration: none;
+  background-color: #27E1C1;
+  color: white;
+  font-size: 24px;
+  border-radius: 7px;
+  padding: 5px;
 }
 
 .shareIconDiv {
-  font-size: 30px;
-  margin: 2rem;
+  margin-left: 5rem;
+  margin-top: 2rem;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.shareIconDiv p {
+  font-size: 24px;
+  color: #27E1C1;
 }
 
 .shareIcon {
+  fill: #27E1C1;
   cursor: pointer;
+  margin-left: 0.75rem;
+}
+
+.shareIcon:hover {
+  fill: #0EA293;
 }
 
 .linkCopiedText {
-  background-color: white;
+  background-color: #BDCDD6;
+  margin: auto;
   border-radius: 7px;
+  padding: 5px;
+}
+
+/* Contact page */
+
+.contactHeader {
   margin: 2rem;
-  width: 10%;
+}
+
+.contactOwnerName {
+  margin: 2rem;
+}
+
+.contactMessage {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+.contactMessage label textarea {
+  display: block;
+}
+
+.contactOwnerBtn {
+  border: none;
+  border-radius: 7px;
+  background-color: #27E1C1;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  margin-left: 2rem;
+  margin-top: 2rem;
 }
