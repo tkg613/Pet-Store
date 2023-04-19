@@ -10,7 +10,7 @@ const PrivateRoute = () => {
   if (loggedIn){
     return <Outlet />
   } else {
-    <Navigate to='/sign-in' />
+    return <Navigate to='/sign-in' />
   }
 }
 

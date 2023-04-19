@@ -50,8 +50,6 @@ const Profile = () => {
     navigate('/sign-in')
   }
 
-  console.log(pets)
-
   return (
     <div>
       <header className='profileHeader'>

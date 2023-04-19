@@ -295,6 +295,10 @@ body {
   height: 100vh;
 }
 
+.forgotPasswordHeader {
+  margin: 2rem;
+}
+
 .passwordResetDiv {
   text-align: center;
 }
@@ -306,8 +310,15 @@ body {
 
 .passwordResetInput {
   height: 36px;
-  width: 30%;
+  width: 90%;
   padding-right: 10px;
+}
+
+.passwordResetEmailField {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 50%;
 }
 
 .passwordResetBtn {
@@ -315,19 +326,17 @@ body {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  align-items: center;
   height: 36px;
-  width: 36px;
+  margin-left: 10px;
 }
 
 .passwordResetIcon {
   height: 100%; 
   width: auto;
+  fill: #27E1C1;
 }
 
 .passwordResetInputGroup {
-  display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -384,17 +393,28 @@ body {
   margin: 2rem;
 }
 
-.petInfoWrapper {
+.categoryInfoWrapper {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.petInfoImageDiv {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 40px;
 }
 
 .petInfoImage {
-  height: 300px;
-  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.petInfoParagraph {
-  margin: 1rem;
+.petInfo {
+  padding: 1rem;
   color: #20262E;
 }
 
@@ -422,17 +442,17 @@ body {
 
 .petInfoLink button {
   border: none;
-  background-color: #98D8AA;
+  background-color: #27E1C1;
   border-radius: 7px;
-  color: #088395;
+  color: white;
   font-size: 24px;
   margin-top: 1.5rem;
   cursor: pointer;
 }
 
 .petInfoLink button:hover {
-  background-color: #088395;
-  color: #98D8AA;
+  background-color: #0EA293;
+  color: white;
 }
 
 

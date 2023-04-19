@@ -27,29 +27,42 @@ const ForgotPassword = () => {
   }
 
   return (
-    <div className='passwordResetContainer'>
-      <div className='passwordResetDiv'>
-        <form onSubmit={onSubmit}>
-          <div className='passwordResetInputGroup'>
-            <input 
-              type='text' 
-              value={email} 
-              onChange={onChange}
-              className='passwordResetInput'
-            />
-            
-            <button type='submit' className='passwordResetBtn'>
-              <BsFillArrowRightCircleFill fill='#FF6D60' className='passwordResetIcon'/>
-            </button>
-          </div>
-        </form>
-        
-      </div>
+    <>
 
-      <div className='passwordResetLink'>
-        <Link to='/sign-in'>Sign In</Link>
+      <header className='forgotPasswordHeader'>
+        <h1>Forgot Password</h1>
+      </header>
+
+      <div className='passwordResetContainer'>
+
+        <div className='passwordResetDiv'>
+          <form onSubmit={onSubmit}>
+
+              <p>Send password reset email to:</p>
+              <div className='passwordResetEmailField'>
+
+                <input 
+                  type='text' 
+                  id='email'
+                  value={email} 
+                  onChange={onChange}
+                  className='passwordResetInput'
+                />
+
+                <button type='submit' className='passwordResetBtn'>
+                <BsFillArrowRightCircleFill className='passwordResetIcon'/>
+                </button>
+              </div>
+              
+          </form>
+          
+        </div>
+
+        <div className='passwordResetLink'>
+          <Link to='/sign-in'>Sign In</Link>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

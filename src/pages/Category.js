@@ -65,14 +65,12 @@ const Category = () => {
 
       <main>
         {pets && pets.map((pet) => (
-            <div className='petInfoWrapper' key={pet.id}>
-              <div className='petInfoImage'>
+            <div className='categoryInfoWrapper' key={pet.id}>
+              <div className='petInfoImageDiv'>
                 <img 
                   src={pet.data.imgUrls[0]} 
                   alt='pet image'
-                  height='300px'
-                  width='300px'
-                  style={{borderRadius: '7px'}}
+                  className='petInfoImage'
                  />
               </div>
               
