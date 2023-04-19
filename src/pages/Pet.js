@@ -2,10 +2,14 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import {Link, useNavigate, useParams} from 'react-router-dom'
 import {getDoc, doc} from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
 import { db } from '../firebase.config'
 import {auth} from '../firebase.config'
 import {AiFillCopy} from 'react-icons/ai'
+import SwiperCore, {Navigation, Pagination, Scrollbar, A11y} from 'swiper'
+import {Swiper, SwiperSlide} from 'swiper/react'
+import 'swiper/swiper-bundle.css'
+
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
 const Pet = () => {
 
@@ -41,12 +45,50 @@ const Pet = () => {
 
   return (
     <>
+      <main style={{margin: '0'}}>
 
-      <header className='petHeader'>
-        <h1>{pet.name}</h1>
-      </header>
+        <Swiper
+          slidesPerView={1}
+          pagination={{clickable: true}}
+        >
+          {pet.imgUrls.map((url, index) => (
+            <SwiperSlide key={index}>
+              <div 
+                className='swiperSlideDiv'
+                style={{
+                  background: `url(${pet.imgUrls[index]}) 
+                  center no-repeat`,
+                  backgroundSize: 'cover',
+                  minHeight: '50rem'
+                }}  
+              >
 
-      <main>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+
+        <header className='petHeader'>
+          <h1>{pet.name}</h1>
+        </header>
+        
+        <div className='petDetails'>
+          <p>Type: {pet.type}</p>
+          <p>{pet.gender}</p>
+          <p>Age: {pet.age}</p>
+          <p>Price: ${pet.price}</p>
+        </div>
+
+        <div>
+          {auth.currentUser?.uid !== pet.userRef && (
+            <Link to={`/contact/${pet.userRef}?petName=${pet.name}`} className='contactLink'>
+              Contact owner
+            </Link>
+          )}
+        </div>
+
+
         <div className='shareIconDiv' onClick={() => {
           navigator.clipboard.writeText(window.location.href)
           setShareLinkCopied(true)
@@ -54,10 +96,10 @@ const Pet = () => {
             setShareLinkCopied(false)
           }, 2000)
         }}>
-          <p>Copy link to clipboard</p>
-          <AiFillCopy fill='#A84448'/>
+          <AiFillCopy fill='#A84448' className='shareIcon'/>
         </div>
         {shareLinkCopied && <p className='linkCopiedText'>Link copied to clipboard.</p>}
+        
       </main>
     </>
   )

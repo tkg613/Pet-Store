@@ -428,3 +428,29 @@ body {
   background-color: #088395;
   color: #98D8AA;
 }
+
+/* Pet page */
+
+.petHeader {
+  margin: 2rem;
+}
+
+.petDetails {
+  margin: 2rem;
+}
+
+.shareIconDiv {
+  font-size: 30px;
+  margin: 2rem;
+}
+
+.shareIcon {
+  cursor: pointer;
+}
+
+.linkCopiedText {
+  background-color: white;
+  border-radius: 7px;
+  margin: 2rem;
+  width: 10%;
+}
